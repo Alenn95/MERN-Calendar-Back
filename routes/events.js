@@ -16,12 +16,7 @@ router.use(valueJWT);
 
 
 // Obtener eventos 
-router.get('/',
-    [
-        check('title', 'Debe haber un titulo').not().isEmpty(),
-        validarCampos,
-        valueJWT
-    ], getEvent)
+router.get('/', getEvent)
 
 
 //crear un nuevo evento
@@ -49,12 +44,7 @@ router.put('/:id',
 
 //Borrar evento
 
-router.delete('/:id',
-    [
-        check('title', 'Debe haber un titulo').not().isEmpty(),
-        validarCampos,
-        valueJWT
-    ], deleteEvent)
+router.delete('/:id', deleteEvent)
 
 
 module.exports = router;
